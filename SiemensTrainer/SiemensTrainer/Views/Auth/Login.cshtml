@@ -1,0 +1,147 @@
+﻿<Html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN PAGE</title>
+    <style>
+        #maindiv {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 14%;
+        }
+
+        h1 {
+            color: white;
+            text-shadow: 2px 2px 7px black;
+        }
+
+        #heading {
+            font-size: 40px;
+            margin-left: 0;
+            text-align: center;
+            margin-top: 3%;
+            color: white;
+            text-shadow: 2px 2px 7px black;
+        }
+
+        #vertical {
+            border-left: 6px solid white;
+            height: 200px;
+            left: 50%;
+            margin-top: 2%;
+            box-shadow: 2px 2px 7px black;
+        }
+
+        form {
+            margin: auto;
+            display: table;
+            background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+            backdrop-filter: blur(10px);
+            border-radius: 10px; 
+            padding: 20px;
+            text-align: center;
+            margin-top: -25px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+            font-size: 25px;
+        }
+
+        input {
+            margin: 5px;
+            font-size: 20px;
+        }
+
+        button {
+            margin: 5px;
+            font-size: 20px;
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+        }
+
+        body {
+            background-color: rgb(85, 85, 85);
+        }
+
+        .validation-summary-errors {
+            background-color: red; /* Adjust the color as needed */
+            color: white; /* Adjust the text color as needed */
+            border-radius: 5px; /* Adjust the border radius as needed */
+        }
+
+        ul {
+            list-style: none;
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        li {
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        a {
+            text-decoration: none;
+            margin: 5px;
+            color: blue;
+        }
+    </style>
+
+    <style type="text/css" media="screen and (max-width:400px)">
+       form {
+           font-size:20px;
+           margin-top:-15px;
+       }
+
+       #heading {
+           font-size: 40px;
+           margin-left:0;
+           text-align:center;
+           margin-bottom:0;
+           margin-top: 18%;
+       }
+       #maindiv {
+           display: block;
+       }
+
+       #vertical {
+           display:none;
+       }
+
+       button{
+           font-size: 15px;
+       }
+
+       input {
+           font-size: 15px;
+       }
+    </style>
+
+</head>
+<body>
+    <div id="maindiv"> 
+        <div id="heading">
+            <p> <b><font size="+9">SIEMEN'S</font></b> <br /> <small>TRAINING PORTAL</small></p>
+        </div>
+
+        <div id="vertical"></div>
+        
+        <div id="formarea">
+            @using (Html.BeginForm("Login", "Auth", FormMethod.Post))
+            {
+            @Html.ValidationSummary()
+                <div id="formdiv">
+                    <form>
+                        <h1>LOGIN FORM</h1>
+                        <input type="text" id="username" name="username" placeholder="Enter Username"> <br />
+                        <input type="password" id="password" name="password" placeholder="Enter Password"> <br />
+                        <button type="submit" style="background-color: black;"> LOGIN </button> <br />
+                        <a href="/Auth/Registration">New User click here</a>
+                    </form>
+                </div>    
+            }
+        </div>
+    </div>
+</body>
+</Html>

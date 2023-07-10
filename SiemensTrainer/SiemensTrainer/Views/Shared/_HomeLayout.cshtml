@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Example</title>
+     <style>
+        #mainsection {
+            display: flex;
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            width: 200px;
+            text-align: center;
+            display: block;
+            font-size: 20px;
+            color: white;
+        }
+
+            a:hover {
+                color: black;
+                background-color: white;
+            }
+
+            a:active {
+                color: black;
+                background-color: white;
+            }
+
+        body, html {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+
+        #aside {
+            width: 200px;
+            min-height: 100%;
+            background-color: dimgray;
+            box-sizing: border-box;
+            position: fixed;
+        }
+
+        #content {
+            width: 100%;
+        }
+
+        #main {
+            flex-grow: 1;
+            padding: 20px;
+            margin-left: 200px;
+            margin-top: 45px;
+        }
+
+        #header {
+            background-color: dimgray;
+            line-height: 30px;
+            width: 100vw;
+            box-shadow: 2px 4px 8px black;
+            position: fixed;
+            z-index: 1;
+            text-align: center;
+            color: white;
+        }
+
+        #links {
+            margin-top: 71px;
+        }
+
+        #pagetitle {
+            font-size: 20px;
+            font-weight: bold;
+        }
+     </style>
+
+    <style type="text/css" media="screen and (max-width:400px)">
+        #pagetitle {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        #main {
+            flex-grow: 1;
+            padding: 20px;
+            margin-left: 100px;
+            margin-top: 45px;
+        }
+
+        #aside {
+            min-width: 100%;
+            min-height: fit-content;
+            background-color: dimgray;
+            box-sizing: border-box;
+            display: flex;
+            position: fixed;
+        }
+
+        a {
+            text-decoration: none;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            width: 100px;
+            text-align: center;
+            font-size: 13px;
+            color: white;
+        }
+
+        #content {
+            font-size: 13px;
+        }
+
+        #main {
+            flex-grow: 1;
+            padding: 20px;
+            margin-left: 0;
+            margin-top: 63px;
+        }
+
+        #links {
+            margin-top: 63px;
+            display: flex;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="header">
+        <p id="pagetitle">WELCOME TO TRAINING PORTAL</p>
+    </div>
+    
+    <div id="mainsection">
+
+        <div id="aside">
+            <div id="links">
+                <a asp-area="" asp-controller="Home" asp-action="Dashboard">Dashboard</a>
+                <a asp-area="" asp-controller="Home" asp-action="Dashboard">Tasks</a>
+                <a asp-area="" asp-controller="Home" asp-action="Dashboard">Request</a>
+                <a asp-area="" asp-controller="Home" asp-action="Dashboard">Contact</a>
+            </div>
+        </div>
+
+        <div id="content">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

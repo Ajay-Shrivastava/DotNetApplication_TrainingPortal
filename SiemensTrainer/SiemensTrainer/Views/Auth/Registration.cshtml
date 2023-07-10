@@ -1,0 +1,74 @@
+﻿<html>
+    <head>
+           <style>
+        form {
+            margin: auto;
+            display: table;
+            margin-top: 15%;
+            background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+            backdrop-filter: blur(10px);
+            border-radius: 10px; 
+            padding: 20px;
+            text-align: center;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        }
+        input {
+            margin: 5px;
+            font-size: 15px;
+        }
+
+        button {
+            margin: 5px;
+            font-size: 15px;
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+        }
+
+        body {
+            background-color: rgb(85, 85, 85);
+        }
+
+        .validation-summary-errors {
+            background-color: red; /* Adjust the color as needed */
+            color: white; /* Adjust the text color as needed */
+            border-radius: 5px; /* Adjust the border radius as needed */
+        }
+
+        ul {
+            list-style: none;
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        li {
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        a {
+            text-decoration: none;
+            margin: 5px;
+        }
+        </style>
+    </head>
+    <body>
+        
+    @using (Html.BeginForm("Registration", "Auth", FormMethod.Post))
+    {
+        @Html.ValidationSummary()
+        <form>
+            <h1>REGISTRATION FORM</h1>
+            <input type="text" id="fname" name="fname" placeholder="Enter First Name">
+            <input type="text" id="lname" name="lname" placeholder="Enter Last Name"> <br />
+            <input type="email" id="email" name="email" placeholder="Enter Email"> <br />
+            <input type="text" id="username" name="username" placeholder="Create Username"> <br />
+            <input type="password" id="password" name="password" placeholder="Create Password"> <br />
+            <button type="submit" style="background-color: black;"> SIGN UP </button> <br />
+            <a href="/Auth/Login">Already Have An Account!</a>
+        </form>
+    }
+    </body>
+</html>
